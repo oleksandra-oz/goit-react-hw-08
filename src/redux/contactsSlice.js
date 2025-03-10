@@ -31,6 +31,9 @@ const contactsSlice = createSlice({
     }
 });
 
+
+/// generel selectors 
+
 export const selectContacts = (state) => state.contacts.items;
 export const selectFilteredContacts = createSelector([selectContacts, selectNameFilter], (contacts, filter) => {
     return contacts.filter(contact =>
@@ -41,6 +44,13 @@ export const selectFilteredContacts = createSelector([selectContacts, selectName
 export const selectLoading = state => state.contacts.loading;
 
 export const selectError = state => state.contacts.error;
+
+
+/// auth selectors
+
+export const selectUser = state => state.auth.user;
+export const selectIsLoggedIn = state => state.auth.isLoggedIn;
+export const selectIsRefreshing = state => state.auth.isRefreshing;
 
 export const contactsReducer = contactsSlice.reducer;
 export const { fetchContacts, setIsError,setIsLoading } = contactsSlice.actions;
