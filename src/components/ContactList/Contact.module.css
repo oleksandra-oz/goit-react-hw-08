@@ -1,0 +1,42 @@
+.contactCard {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  background-color: #a4f7c8; /* Колір морської хвилі */
+  color: #060606; /* Білий текст */
+  border-radius: 12px;
+  padding: 16px;
+  margin: 10px 0;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.contactCard:hover {
+  transform: scale(1.05);
+}
+
+.contactList {
+  list-style: none;
+  padding: 0;
+}
+
+.contactList li {
+  margin: 5px 0;
+  font-size: 18px;
+}
+
+.deleteButton {
+  background-color: #023829; /* Червоний */
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 8px;
+  margin-left: 8px;
+}
+
+.deleteButton:hover {
+  background-color: #db4605;
+}
