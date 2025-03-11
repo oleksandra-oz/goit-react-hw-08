@@ -4,7 +4,7 @@
 
 // import { fetchContacts, setIsError, setIsLoading } from "./contactsSlice";
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { api } from './authOps';
+import { api } from '../auth/operations';
 
 
 export const fetchData = createAsyncThunk('contacts/fetchContacts', async (_, thunkAPI) => {

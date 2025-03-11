@@ -12,8 +12,8 @@ import ContactsPage from "./pages/Contacts/ContactsPage.jsx";
 import { Toaster } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { refreshUser } from "./redux/authOps.js";
-import { selectIsRefreshing } from "./redux/contactsSlice.js";
+import { refreshUser } from "./redux/auth/operations.js";
+import { selectIsRefreshing } from "./redux/contacts/slice.js";
 import PrivateRoute from "./components/PrivateRoute.jsx";
 import RestrictedRoute from "./components/RestrictedRoute.jsx";
 

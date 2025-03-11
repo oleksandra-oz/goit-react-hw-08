@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 import s from "./Header.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { selectIsLoggedIn, selectUser } from "../../redux/contactsSlice";
-import { logoutThunk } from "../../redux/authOps";
+import { selectIsLoggedIn, selectUser } from "../../redux/contacts/slice";
+import { logoutThunk } from "../../redux/auth/operations";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -10,7 +10,7 @@ const Header = () => {
   const user = useSelector(selectUser);
   return (
     <header className={s.header}>
-      <h2 className={s.title}>Auth</h2>
+      <h2 className={s.title}>Phonebook</h2>
       {user.name && <h3>{user.email}</h3>}
       <nav>
         <NavLink
