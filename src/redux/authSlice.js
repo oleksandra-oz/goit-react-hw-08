@@ -22,9 +22,10 @@ const slice = createSlice({
             state.isLoggedIn = true;
             })
             .addCase(loginThunk.fulfilled, (state, action) => {
+        
                 state.user = action.payload.user;
-            state.token = action.payload.token;
-            state.isLoggedIn = true;
+                state.token = action.payload.token;
+                state.isLoggedIn = true;
             })
             .addCase(logoutThunk.fulfilled, () => initialState)
             .addCase(refreshUser.fulfilled, (state, action) => {

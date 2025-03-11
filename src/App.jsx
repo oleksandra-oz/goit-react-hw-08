@@ -15,6 +15,7 @@ import { useEffect } from "react";
 import { refreshUser } from "./redux/authOps.js";
 import { selectIsRefreshing } from "./redux/contactsSlice.js";
 import PrivateRoute from "./components/PrivateRoute.jsx";
+import RestrictedRoute from "./components/RestrictedRoute.jsx";
 
 function App() {
   const dispatch = useDispatch();
@@ -37,8 +38,18 @@ function App() {
             }
           />
         </Route>
-        <Route path="/register" element={<RegistrationPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route
+          path="/register"
+          element={
+            <RestrictedRoute component={<RegistrationPage />} redirectTo="/" />
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <RestrictedRoute component={<LoginPage />} redirectTo="/contacts" />
+          }
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
