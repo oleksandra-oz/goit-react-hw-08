@@ -1,7 +1,4 @@
 import "./App.css";
-import ContactList from "./components/ContactList/ContactList.jsx";
-import SearchBox from "./components/SearchBox/SearchBox.jsx";
-import ContactForm from "./components/ContactForm/ContactForm.jsx";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import RegistrationPage from "./pages/RegistrationPage/RegistrationPage";
@@ -13,9 +10,9 @@ import { Toaster } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { refreshUser } from "./redux/auth/operations.js";
-import { selectIsRefreshing } from "./redux/contacts/slice.js";
 import PrivateRoute from "./components/PrivateRoute.jsx";
 import RestrictedRoute from "./components/RestrictedRoute.jsx";
+import { selectIsRefreshing } from "./redux/auth/selectors";
 
 function App() {
   const dispatch = useDispatch();
