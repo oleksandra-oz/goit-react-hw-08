@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectIsLoggedIn, selectUser } from "../../redux/auth/selectors";
 import { logoutThunk } from "../../redux/auth/operations";
 
-const Header = () => {
+const AppBar = () => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const user = useSelector(selectUser);
@@ -61,4 +61,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default AppBar;
