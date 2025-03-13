@@ -1,5 +1,6 @@
 import { ErrorMessage, Field, Formik, Form } from "formik";
-import * as Yup from "yup";
+import * as yup from "yup";
+
 import s from "./ContactForm.module.css";
 import { nanoid } from "nanoid";
 import { useDispatch } from "react-redux";
@@ -26,13 +27,15 @@ const ContactForm = ({ onAdd }) => {
     actions.resetForm();
   };
 
-  const validationSchema = Yup.object().shape({
-    name: Yup.string()
+  const validationSchema = yup.object().shape({
+    name: yup
+      .string()
       .min(3, "Too short")
       .max(50, "Too long")
       .required("Required")
       .matches(onlyLetters, "Wrong name"),
-    number: Yup.string()
+    number: yup
+      .string()
       .min(3, "Too short")
       .max(50, "Too long")
       .required("Required")
