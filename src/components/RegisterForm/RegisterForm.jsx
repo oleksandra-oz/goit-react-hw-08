@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { registerThunk } from "../../redux/auth/operations";
 import { Link } from "react-router-dom";
 
-const RegistrationForm = () => {
+const RegisterForm = () => {
   const dispatch = useDispatch();
   const initialValues = {
     email: "",
@@ -53,4 +53,4 @@ const RegistrationForm = () => {
   );
 };
 
-export default RegistrationForm;
+export default RegisterForm;
