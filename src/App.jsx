@@ -17,37 +17,44 @@ import { selectIsRefreshing } from "./redux/auth/selectors";
 function App() {
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
+
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
-  return isRefreshing ? null : (
-    <>
-      <Toaster position="top-right" reverseOrder={false} />
+
+  if (isRefreshing) {
+    return <p>Loading...</p>; // Можеш замінити на спінер
+  }
+
+  return (
+    <Layout>
+      <Toaster />
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route
-            path="contacts"
-            element={
-              <PrivateRoute component={ContactsPage} redirectTo="/login" />
-            }
-          />
-        </Route>
+        <Route path="/" element={<HomePage />} />
         <Route
           path="/register"
           element={
-            <RestrictedRoute component={<RegistrationPage />} redirectTo="/" />
+            <RestrictedRoute
+              redirectTo="/contacts"
+              component={<RegistrationPage />}
+            />
           }
         />
         <Route
           path="/login"
           element={
-            <RestrictedRoute component={<LoginPage />} redirectTo="/contacts" />
+            <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
+          }
+        />
+        <Route
+          path="/contacts"
+          element={
+            <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
           }
         />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </>
+    </Layout>
   );
 }
 
