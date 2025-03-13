@@ -61,8 +61,6 @@
 //   );
 // };
 
-// export default AppBar;
-
 import { Navigation } from "../Navigation/Navigation";
 import { UserMenu } from "../UserMenu/UserMenu";
 import { useSelector } from "react-redux";
@@ -79,3 +77,5 @@ export const AppBar = () => {
     </header>
   );
 };
+
+export default AppBar;
