@@ -8,8 +8,8 @@ import { addContact } from "../../redux/contacts/operations";
 const ContactForm = ({ onAdd }) => {
   const dispatch = useDispatch();
 
-  // const nameId = useId();
-  // const numId = useId();
+  const nameId = useId();
+  const numId = useId();
 
   const initialValues = {
     id: "",
